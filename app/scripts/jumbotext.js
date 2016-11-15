@@ -224,8 +224,10 @@ closeValue.prototype = {
     }
 };
 
-var strokeColor = "rgba(0,0,0,1)";
-var backgroundColor = "rgba(255,255,255,0.4)";
+//var strokeColor = "rgba(255,255,255,0.1)";
+//var backgroundColor = "rgba(0,0,0,1)";
+var strokeColor = "rgba(0,0,0,0.3)";
+var backgroundColor = "rgba(255,255,255,1)";
 var vibrateFlag = false;
 
 var canvas = document.getElementById("canvas");
@@ -495,20 +497,20 @@ var fullSet = function() {
     };
 };
 var textSet = [
-    { text: "@@@@@@@@@@@@@", sphereRadius: 60 + Math.random() * 60, sphereSpace: 200, unitTime: 100, time: 4000 },
-    { text: "WELCOME_TO", sphereRadius: 120, sphereSpace: 70, unitTime: 50, time: 1000 },
-    { text: "COPENHACKS!!", sphereRadius: 140, sphereSpace: 80, unitTime: 100, time: 2000 },
-	{ text: "April 22-23, 2017", sphereRadius: 120, sphereSpace: 70, unitTime: 50, time: 3000 }
-    /*{ text: "@@@@@@@@", sphereRadius: 60 + Math.random() * 60, sphereSpace: 200, unitTime: 100, time: 4000 }
-    {text:"TYPEFACE", sphereRadius:120, sphereSpace:70, unitTime:100, time:4000},
-    {text:"BASED_ON", sphereRadius:100, sphereSpace:60, unitTime:100, time:3000},
-    {text:"HELVETICA", sphereRadius:140, sphereSpace:80, unitTime:100, time:2000},
-    {text:"MOVABLE", sphereRadius:120, sphereSpace:70, unitTime:100, time:2000},
-    {text:"AND", sphereRadius:100, sphereSpace:60, unitTime:150, time:3500},
-    {text:"PROGRAMABLE", sphereRadius:120, sphereSpace:70, unitTime:50, time:2000},
-    {text:"!!!!!!!", sphereRadius:100, sphereSpace:60, unitTime:100, time:3500},
-    {text:"HACK_ME!", sphereRadius:140, sphereSpace:80, unitTime:100, time:2500},
-    {text:"@@@@@@@@", sphereRadius:60 + Math.random()*60, sphereSpace:200, unitTime:100, time:4000}*/
+    { text: "WELCOME_TO", sphereRadius: 100, sphereSpace: 60, unitTime: 100, time: 2000 },
+    //{ text: "TO", sphereRadius: 100, sphereSpace: 60, unitTime: 100, time: 1000 },
+    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 200, unitTime: 200, time: 3000 },
+    { text: "COPENHACKS!", sphereRadius: 120, sphereSpace: 70, unitTime: 200, time: 5000 },
+    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 100, unitTime: 100, time: 10000 },
+    //{text:"BASED_ON", sphereRadius:100, sphereSpace:60, unitTime:100, time:3000},
+    //{text:"HELVETICA", sphereRadius:140, sphereSpace:80, unitTime:100, time:2000},
+    //{text:"@@@@@@@@", sphereRadius:60 + Math.random()*60, sphereSpace:200, unitTime:100, time:4000},
+    //{text:"MOVABLE", sphereRadius:120, sphereSpace:70, unitTime:100, time:2000},
+    //{text:"AND", sphereRadius:100, sphereSpace:60, unitTime:150, time:3500},
+    //{text:"PROGRAMABLE", sphereRadius:120, sphereSpace:70, unitTime:50, time:2000},
+    //{text:"!!!!!!!", sphereRadius:100, sphereSpace:60, unitTime:100, time:3500},
+    //{text:"HACK_ME!", sphereRadius:140, sphereSpace:80, unitTime:100, time:2500},
+    //{text:"@@@@@@@@", sphereRadius:60 + Math.random()*60, sphereSpace:200, unitTime:100, time:4000}
 ];
 
 var textSetChangerIncrement = 0;
@@ -528,27 +530,23 @@ var textSetChanger = function() {
     }, textSet[textSetChangerIncrement].time);
 };
 var vibrateCV = new closeValue(200, 500);
-var invertCV = new closeValue(1000, 1200);
+var invertCV = new closeValue(0, 1000);
 
 var start = function() {
     setup();
     setInterval(function() {
-        if (vibrateCV.execution() > 0.8) {
-            vibrateFlag = false; /*was true*/
-            strokeColor = "rgba(0,0,0,0.1)";
-            backgroundColor = "rgba(255,255,255,0.5)";
-        } else {
-            vibrateFlag = false;
-            strokeColor = "rgba(0,0,0,0.1)";
-            backgroundColor = "rgba(255,255,255,0.5)";
-        };
-        /*if (invertCV.execution() > 0.7) {
-            strokeColor = "rgba(0,0,0,0.1)";
-            backgroundColor = "rgba(255,255,255,1)";
-        } else {
-            strokeColor = "rgba(255,255,255,0.1)";
-            backgroundColor = "rgba(0,0,0,1)";
-        };*/
+        //if(vibrateCV.execution() > 0.8) {
+        //	vibrateFlag = true;
+        //} else {
+        //	vibrateFlag = false;
+        //};
+        //if(invertCV.execution() > 0.7) {
+        //	strokeColor = "rgba(0,0,0,0.1)";
+        //	backgroundColor = "rgba(255,255,255,1)";
+        //} else {
+        //	strokeColor = "rgba(255,255,255,0.1)";
+        //	backgroundColor = "rgba(0,0,0,1)";
+        //};
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         ctx.fillStyle = backgroundColor;
         ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
