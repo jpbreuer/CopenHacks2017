@@ -45,31 +45,31 @@
 
     <div id="index-banner" class="parallax-container valign-wrapper scrollspy">
         <a id="mlh-trust-badge" style="position:fixed;top:80px;right:50px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016-eu/events?utm_source=s2016eu&utm_medium=TrustBadge&utm_campaign=s2016eu" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;"></a>
-        <canvas id="canvas"></canvas>
-        <div id="buffer" style="display:none;">
+        <canvas id="canvas_worm"></canvas>
+	<!-- <canvas id="canvas"></canvas> -->
+        <div class="section no-pad-bot valign">
+	    <div class="container">
+                <div class="row center">
+                    <img class="main-logo" src="images/cphackslogo.png" alt="main logo">
+                </div>
+                <h1 class="header logo-text center white-text"><span class="above_demo">CopenHacks</span></h1>
+                <h4 class="header center col s12 white-text"><span class="trench">April 22nd-23rd, 2017</span></h4>
+                <div class="row center">
+                    <h5 class="header col s12 light blue-text"><span class="trench">24 hours of collaboration, sharing, fun, and learning.</span></h5>
+                    <h5 class="header col s12 light blue-text"><span class="trench">Join 100 participants for a weekend of creating innovative technology.</span></h5>
+                </div>
+                <div class="row center">
+                    <a href="#about" id="download-button" class="btn-large waves-effect waves-light green">Learn more</a>
+                    <a href="#register" id="download-button" class="btn-large waves-effect waves-light blue">Register</a>
+                    <a href="#gallery" id="download-button" class="btn-large waves-effect waves-light red">Gallery</a>
+                </div>
+            </div>
+        </div>
+	<div id="buffer" style="display:none;">
         </div>
         <!--img src="images/cover2.png" alt="Nyhavn Splash"-->
     </div>
 
-    <div class="section no-pad-bot valign">
-        <div class="container">
-            <div class="row center">
-                <img class="main-logo" src="images/cphackslogo.png" alt="main logo">
-
-            </div>
-            <h1 class="header logo-text center black-text"><span class="above_demo">CopenHacks</span></h1>
-            <h4 class="header center col s12 black-text"><span class="trench">April 22nd-23rd, 2017</span></h4>
-            <div class="row center">
-                <h5 class="header col s12 light black-text"><span class="trench">24 hours of collaboration, sharing, fun, and learning.</span></h5>
-                <h5 class="header col s12 light black-text"><span class="trench">Join 100 participants for a weekend of creating innovative technology.</span></h5>
-            </div>
-            <div class="row center">
-                <a href="#about" id="download-button" class="btn-large waves-effect waves-light grey">Learn more</a>
-                <a href="#register" id="download-button" class="btn-large waves-effect waves-light blue">Register</a>
-                <a href="#gallery" id="download-button" class="btn-large waves-effect waves-light red">Gallery</a>
-            </div>
-        </div>
-    </div>
     <div class="parallax black"><a class="typeform-share button" href="https://jp73.typeform.com/to/eW6NcB" data-mode="1" target="_blank">Launch me!</a>
         <script>
             (function() {
@@ -464,9 +464,20 @@ Check out the CopenHacks 2016 photos here
         </div>
     </div>
 
+    <div class="row">
+	    <canvas id="canvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+    </div>
+
     <div class="container">
         <div id="register" class="section scrollspy">
 
+	    <!-- <div id="index-banner" class="parallax-container valign-wrapper scrollspy"> -->
+	    <!-- <div class="row"> -->
+		<!-- <div class="col s12 center"> -->    
+		    <!-- <canvas id="canvas" width="200" height="100" style="border:1px solid #000000;"></canvas> -->
+		<!-- </div> -->
+	    <!-- </div> -->
+	    <!-- <div class="col s12 center"> -->
             <div class="row">
                 <div class="col s12 center">
                     <h2 class="center blue-text">Register</h2>
@@ -498,11 +509,10 @@ Check out the CopenHacks 2016 photos here
                         })()
                     </script>
 
-
-
                     <h4 class="center">Registrations are closed.</h4>
                 </div>
             </div>
+
 
             <div class="col s12 center">
                 <p>
@@ -528,7 +538,7 @@ Check out the CopenHacks 2016 photos here
     <script src="scripts/materialize.js"></script>
     <script src="scripts/init.js"></script>
     <script src="scripts/jumbotext.js"></script>
-
+    <script src="scripts/drawworm.js"></script>
     <script src="scripts/better-simple-slideshow.min.js"></script>
     <script>
         var opts = {

@@ -226,9 +226,9 @@ closeValue.prototype = {
 
 //var strokeColor = "rgba(255,255,255,0.1)";
 //var backgroundColor = "rgba(0,0,0,1)";
-var strokeColor = "rgba(0,0,0,0.3)";
-var backgroundColor = "rgba(255,255,255,1)";
-var vibrateFlag = false;
+var strokeColor = "blue"; //"rgba(0,0,0,1)";
+var backgroundColor = "rgba(0,0,0,0)";
+var vibrateFlag = true;
 
 var canvas = document.getElementById("canvas");
 var canvasWidth = window.innerWidth;
@@ -241,8 +241,8 @@ ctx.strokeStyle = strokeColor;
 window.onresize = function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    camera.display.x = window.innerWidth / 2;
-    camera.display.y = window.innerHeight / 2;
+    camera.display.x = window.innerWidth;
+    camera.display.y = window.innerHeight;
 };
 
 
@@ -497,11 +497,11 @@ var fullSet = function() {
     };
 };
 var textSet = [
-    { text: "WELCOME_TO", sphereRadius: 100, sphereSpace: 60, unitTime: 100, time: 2000 },
+    { text: "SEE_YOU_IN", sphereRadius: 100, sphereSpace: 60, unitTime: 10, time: 1000 },
     //{ text: "TO", sphereRadius: 100, sphereSpace: 60, unitTime: 100, time: 1000 },
-    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 200, unitTime: 200, time: 3000 },
-    { text: "COPENHACKS!", sphereRadius: 120, sphereSpace: 70, unitTime: 200, time: 5000 },
-    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 100, unitTime: 100, time: 10000 },
+    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 200, unitTime: 20, time: 3000 },
+    { text: "COPENHACKS", sphereRadius: 120, sphereSpace: 70, unitTime: 20, time: 1000 },
+    { text: "@@@@@@@@@@", sphereRadius: 175 + Math.random() * 60, sphereSpace: 100, unitTime: 10, time: 5000 },
     //{text:"BASED_ON", sphereRadius:100, sphereSpace:60, unitTime:100, time:3000},
     //{text:"HELVETICA", sphereRadius:140, sphereSpace:80, unitTime:100, time:2000},
     //{text:"@@@@@@@@", sphereRadius:60 + Math.random()*60, sphereSpace:200, unitTime:100, time:4000},
@@ -557,7 +557,7 @@ var start = function() {
     textSetChanger();
 };
 document.body.onmousemove = function(e) {
-    camera.rotate.x = e.pageY / window.innerHeight * 180 - 90;
+    camera.rotate.x = e.pageY / window.innerHeight * 0;
     camera.rotate.y = e.pageX / window.innerWidth * 180 - 90;
     document.onmousedown = function() { camera.zoom = Math.random() * 1 + 1 };
     document.onmouseup = function() { camera.zoom = 1 };

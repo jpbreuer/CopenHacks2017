@@ -23,7 +23,7 @@ function DrawWorm(){
     var py = window.innerHeight;
     
     this.initialize = function(){
-	canvas  = document.getElementById("canvas");
+	canvas  = document.getElementById("canvas_worm");
 	outerdiv = document.getElementById('index-banner');
 	context = canvas.getContext('2d');
 	
